@@ -171,6 +171,18 @@ h4 .MathJax, h5 .MathJax {
   font-size: 1.2rem;
 }
 
+.KaTeX { 
+  font-size: 0.95rem;
+}
+
+h2 .KaTeX, h3 .KaTeX, h4 .KaTeX, h3 .KaTeX {
+  font-size: 1.5rem;
+}
+
+h4 .KaTeX, h5 .KaTeX {
+  font-size: 1.2rem;
+}
+
 pre {
   text-align: left;
   border: 0.3px solid var(--color-few);
