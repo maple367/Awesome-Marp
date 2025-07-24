@@ -171,15 +171,15 @@ h4 .MathJax, h5 .MathJax {
   font-size: 1.2rem;
 }
 
-.katex { 
+.katex .katex-html { 
   font-size: 0.95rem;
 }
 
-h2 .katex, h3 .katex, h4 .katex, h3 .katex {
+h2 .katex .katex-html, h3 .katex .katex-html, h4 .katex .katex-html, h3 .katex .katex-html {
   font-size: 1.5rem;
 }
 
-h4 .katex, h5 .katex {
+h4 .katex .katex-html, h5 .katex .katex-html {
   font-size: 1.2rem;
 }
 
