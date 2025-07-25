@@ -108,10 +108,11 @@ blockquote>p::before {
 }
 
 a {
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   padding:0 .2rem;
   color: var(--color-main);
   font-family: var(--font-family-main);
+  text-decoration: underline dotted var(--color-much);
 }
 a:hover {
   color: var(--color-much);
