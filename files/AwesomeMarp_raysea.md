@@ -4,7 +4,7 @@ size: 16:9
 theme: am_raysea
 paginate: true
 headingDivider: [2,3]
-footer: \ *初虹（虹鹄山庄）* *Awesome Marp：轻松取代 LaTeX Beamer！* *2024年1月13日（v1.3）*
+footer: \ *Maple* *Awesome Marp Template*
 ---
 
 
@@ -13,15 +13,12 @@ footer: \ *初虹（虹鹄山庄）* *Awesome Marp：轻松取代 LaTeX Beamer�
 <!-- _footer: "" --> 
 <!-- _paginate: "" --> 
 
-# Awesome Marp：轻松取代 LaTeX Beamer！
+# 浙江睿熙科技有限公司
 
-###### “用法简单、功能全面的个性化 PPT 模板”
+###### Zhejiang RaySea Technology Co. , Ltd.
 
-@初虹
-公众号：虹鹄山庄
-发布时间：2024 年 1 月 13 日（v1.3）
-<ch2099058972@163.com>
-Awesome-Marp 地址：[GitHub 库](https://github.com/favourhong/Awesome-Marp)/[Gitee 库](https://gitee.com/favourhong/Awesome-Marp)
+@Maple
+发布时间：2026 年 7 月 19 日（v1.0）
 
 ## Awesome Marp 有什么？
 
@@ -926,13 +923,3 @@ footer: 初虹 # 设置页脚区域的内容，如果设定页眉的内容，则
   - 公众号：虹鹄山庄
 
 <div>
-
-## 创作不易，buy me a coffee 🤙~ 
-
-<!-- _class: trans -->
-<!-- _footer: "" -->
-<!-- _paginate: "" -->
-
-<br>
-
-![#c w:300](https://mytuchuang-1303248785.cos.ap-beijing.myqcloud.com/picgo/202309240907419.png)
