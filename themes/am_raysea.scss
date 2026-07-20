@@ -64,7 +64,7 @@ section:not(.trans)::before {
     url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea_logo.webp'),
     url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea_corner.webp');
   background-size:
-    84px 84px,
+    100px 100px,
     202px 127px;
 
   background-position:
@@ -283,8 +283,8 @@ section.cover_a::before {
   position: absolute;
   top: 12px;
   right: 18px;
-  width: 84px;
-  height: 84px;
+  width: 100px;
+  height: 100px;
   background: url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea_logo.webp') right top / contain no-repeat;
   filter: brightness(0) invert(1);
   pointer-events: none;
