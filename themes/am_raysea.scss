@@ -18,12 +18,12 @@
   --filter-c: brightness(0%) contrast(60%) grayscale(80%);
   --filter-e: brightness(0%) contrast(70%) grayscale(100%);
   --font-family-main: 'Latin Modern Math', 'Adobe Garamond', 'Times New Roman', '楷体';
-  --font-family-covertitle: '微软雅黑 Light', 'Optima LT Medium', 'Times New Roman', '黑体';
-  --font-family-title: '微软雅黑', 'Optima LT Medium', 'Times New Roman', '黑体';
+  --font-family-covertitle: 'Microsoft YaHei Light', 'Optima LT Medium', 'Times New Roman', '黑体';
+  --font-family-title: 'Microsoft YaHei', 'Optima LT Medium', 'Times New Roman', '黑体';
   --font-family-footer: 'Charm', 'Times New Roman', '楷体';
   --font-family-code: 'Fira Code', 'HYMingChanKeBen W', 'Consolas', '宋体';
-  --font-size-1: 80px;
-  --foot-size-subtitle: 36px;
+  --font-size-1: 72px;
+  --foot-size-subtitle: 32px;
   --font-size-2-3: 38px;
   --font-size-4-5: 30px;
   --font-size-main: 25px;
@@ -49,7 +49,8 @@ footer{
   left: 12%;
 }
 
-section:not(.trans)::before {
+/* 正文装饰 */
+section:not(.trans):not(.lastpage):not([class*='cover_']):not(.no_mark)::before {
   content: '';
   position: absolute;
 
@@ -61,17 +62,21 @@ section:not(.trans)::before {
   height: 100%;
 
   background-image:
-    url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea_logo.webp'),
-    url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea_corner.webp');
+    url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea/raysea_logo.webp'),
+    url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea/slide_corner.webp'),
+    url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea/slide_title.webp');
   background-size:
-    100px 100px,
-    202px 127px;
+    96px auto,
+    200px auto,
+    64px 96px;
 
   background-position:
-    calc(100% - 18px) 12px,
-    right bottom;
+    right 8px,
+    right bottom,
+    20px top;
 
   background-repeat:
+    no-repeat,
     no-repeat,
     no-repeat;
 
@@ -79,36 +84,20 @@ section:not(.trans)::before {
   z-index: -1;
 }
 
-section:not(.trans) h2 {
+section:not(.trans):not(.lastpage):not([class*='cover_']) h2 {
   box-sizing: border-box;
 
   margin: 0;
   padding-bottom: 10px;
   position: absolute;
-  top: 36px;
+  top: 28px;
   left: 90px;
 
   width: 1000px;
 }
 
-/* 标题左侧装饰 */
-section:not(.trans) h2::before {
-  content: '';
-  position: absolute;
-  top: -36px;
-  left: -72px;
-
-  width: 150px;
-  height: 96px;
-
-  background:
-    url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea_title.webp') left top / contain no-repeat;
-
-  pointer-events: none;
-}
-
 /* 标题下方分割线 */
-section:not(.trans) h2::after {
+section:not(.trans):not(.lastpage):not([class*='cover_']) h2::after {
   content: '';
   position: absolute;
   left: 0;
@@ -119,186 +108,69 @@ section:not(.trans) h2::after {
   background-color: #7898c4;
 }
 
-section[class*='cols-2'] h2 {
-  position: absolute;
-  top: -75%;
-  left: 2.5%;
-
-  grid-area: slideheading;
-
-  width: 1000px;
-  margin: 0;
+/* 分栏标题 */
+section:is([class*='cols'], [class*='rows'], [class*='pin']) h2 {
+  grid-area: none;
 
   align-self: start;
   justify-self: stretch;
-}
 
-section[class*='cols-3'] h2 {
-  position: absolute;
-  top: -75%;
-  left: 1.6%;
+  box-sizing: border-box;
 
-  grid-area: slideheading;
-
-  width: 1000px;
   margin: 0;
-
-  align-self: start;
-  justify-self: stretch;
-}
-
-section[class*='rows-'] h2 {
+  padding-bottom: 10px;
   position: absolute;
-  top: -107%;
-  left: 1.25%;
-
-  grid-area: slideheading;
-
-  width: 1000px;
-  margin: 0;
-
-  align-self: start;
-  justify-self: stretch;
-}
-
-section[class*='pin'] h2 {
-  position: absolute;
-  top: -75%;
-  left: 2.5%;
-
-  grid-area: slideheading;
-
-  width: 1000px;
-  margin: 0;
-
-  align-self: start;
-  justify-self: stretch;
-}
-
-section[class*='_ol_'] h2, section[class*='_ul_'] h2 {
-  position: absolute;
-  top: 36px;
+  top: 28px;
   left: 90px;
 
-  grid-area: slideheading;
-
   width: 1000px;
-  margin: 0;
-
-  align-self: start;
-  justify-self: stretch;
-}
-
-section.cover_a {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-
-  background:
-
-    /* 海面近景：更密、更宽的暗纹 */
-    repeating-linear-gradient(to bottom,
-      transparent 0 12px,
-      rgba(5, 15, 31, 0.26) 13px 17px,
-      rgba(128, 151, 174, 0.09) 18px 20px,
-      transparent 21px 32px),
-
-    /* 海面中景：加密中尺度波纹 */
-    repeating-linear-gradient(to bottom,
-      transparent 0 6px,
-      rgba(182, 199, 212, 0.14) 7px 9px,
-      transparent 10px 15px,
-      rgba(9, 24, 43, 0.19) 16px 19px,
-      transparent 20px 28px),
-
-    /* 海平线附近：细密反光，明显加密 */
-    repeating-linear-gradient(to bottom,
-      transparent 0 2px,
-      rgba(218, 226, 231, 0.17) 3px 4px,
-      transparent 5px 7px,
-      rgba(25, 43, 64, 0.12) 8px 9px,
-      transparent 10px 13px),
-
-    /* 新增：超细海纹，让海面更“丝滑密集” */
-    repeating-linear-gradient(to bottom,
-      transparent 0 1px,
-      rgba(210, 220, 228, 0.08) 2px 2.5px,
-      transparent 3px 5px),
-
-    /* 海面中央的模糊反光 */
-    radial-gradient(ellipse at 48% 66%,
-      rgba(162, 182, 198, 0.15) 0%,
-      rgba(91, 116, 141, 0.07) 28%,
-      transparent 58%),
-
-    /* 天空中央亮度 */
-    radial-gradient(ellipse at 50% 38%,
-      rgba(150, 177, 200, 0.35),
-      transparent 65%),
-
-    /* 主体天空和海洋颜色 */
-    linear-gradient(to bottom,
-      #3c5688 0%,
-      #5779a3 38%,
-      #7d98a8 55%,
-      #d0d0bd 60%,
-      #34445e 62%,
-      #263b57 75%,
-      #192332 100%);
-
-  background-size:
-    100% 40%,
-    /* 近景 */
-    100% 22%,
-    /* 中景 */
-    100% 18%,
-    /* 远景 */
-    100% 12%,
-    /* 超细纹 */
-    100% 100%,
-    100% 100%,
-    100% 100%;
-
-  background-position:
-    left bottom,
-    left 84%,
-    left 80%,
-    left 88%,
-    center,
-    center,
-    center;
-
-  background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat;
 }
 
 section.cover_a::before {
   content: '';
   position: absolute;
-  top: 12px;
-  right: 18px;
-  width: 100px;
-  height: 100px;
-  background: url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea_logo.webp') right top / contain no-repeat;
-  filter: brightness(0) invert(1);
+
+  /* 相对于整张 slide */
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea/raysea_logo.webp');
+
+  background-size:
+    96px auto;
+
+  background-position:
+    right 8px;
+
+  background-repeat:
+    no-repeat;
+
   pointer-events: none;
+  filter: brightness(0) invert(1);
 }
+
+section.cover_a {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+
+  background: url('https://cdn.jsdelivr.net/gh/maple367/picx-images-hosting@master/raysea/slide_bg.webp') center 66% / 100% auto no-repeat;
+}
+
 
 section.cover_a h1 {
   font-family: var(--font-family-covertitle);
   background-color: transparent;
-  top: 38%;
+  top: 35%;
 }
 
 section.cover_a h6 {
   font-family: var(--font-family-covertitle);
-  top: 48%;
+  top: 47%;
 }
 
 section.cover_a p {
